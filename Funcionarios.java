@@ -3,7 +3,7 @@ abstract class Funcionarios extends Pessoas{
     //construtor
     public Funcionarios(long cpf, string nome, int cod){
         super(cpf,nome);
-        this.codFuncionario = cod
+        this.codFuncionario = cod;
     }
 
 }
@@ -12,7 +12,7 @@ public class Medico extends Funcionarios{
     //construtor
     public Funcionarios(long cpf, string nome, int cod){      
         super(cpf,nome);
-        this.codFuncionario = cod
+        this.codFuncionario = cod;
     }
 
 }
@@ -22,7 +22,7 @@ public class Enfermeiros extends Funcionarios{
     //construtor
     public Funcionarios(long cpf, string nome, int cod){      
         super(cpf,nome);
-        this.codFuncionario = cod
+        this.codFuncionario = cod;
     }
 }
 

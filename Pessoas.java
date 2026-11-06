@@ -3,9 +3,9 @@ abstract class Pessoas{
     private String nome;
 
     //construtor
-    public Pessoas(long cpf, string nome){
+    public Pessoas(long cpf, String nome){
         this.cpf = cpf;
-        this.nome = nome
+        this.nome = nome;
     }
 
 }
