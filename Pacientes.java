@@ -4,10 +4,22 @@ public class Pacientes extends Pessoas{
     //private bool convenio;
 
     //construtor
-    public Pacientes(long cpf, string nome, int cod){
+    public Pacientes(long cpf, String nome, int cod){
         super(cpf, nome);
-        this.tempoAlocado = 0;
-        this.numPaciente = cod;
+        setTempoAlocado(tempoAlocado);
+        setNumPaciente(numPaciente);
     }
-    public Pessoas getNumPaciente() { return numPaciente; }
+
+    //getters
+    public int getNumPaciente() { return numPaciente; }
+    public int getTempoAlocado() { return tempoAlocado; }
+
+    //setters
+    public void setNumPaciente(int numPaciente){
+        this.numPaciente=numPaciente;
+    }
+
+    public void setTempoAlocado(int tempoAlocado){
+        this.tempoAlocado=tempoAlocado;
+    }
 }

@@ -65,4 +65,21 @@ abstract class Quartos {
             setDisponivel(true);
         }
     }
+
+    public void checaTransferencia(Pacientes paciente){
+        if(tempoMax != -1 && paciente.getTempoAlocado() >= tempoMax){
+            System.out.println("Transferência necessária!");
+        }else{
+            System.out.println("Transferência não é necessária");
+        }
+    }
+
+    public void liberarVaga(){
+        setHospedes(hospedes--);
+    }
+
+    public void ocuparVaga(){
+        setHospedes(hospedes++);
+
+    }
 }
