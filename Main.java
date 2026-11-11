@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     private static List<Quartos> listaQuartos = new ArrayList<>();
-    private static List<Medico> listaMedicos = new ArrayList<>();
+    private static List<Medicos> listaMedicos = new ArrayList<>();
     private static List<Pacientes> listaPacientes = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
@@ -27,6 +27,7 @@ public class Main {
                     case 4 -> ocuparQuarto();
                     case 5 -> desocuparQuarto();
                     case 6 -> listarMedicos();
+                    case 7 -> listarPacientes();
                     case 0 -> System.out.println("\nEncerrando o sistema. Até mais!");
                     default -> System.out.println("\n[Erro] Opção inválida. Digite um número do menu.");
                 }
@@ -40,10 +41,19 @@ public class Main {
     }
 
     private static void carregarDadosIniciais() {
+        // Quartos iniciais
         listaQuartos.add(new Apartamento(101, 0, true));
         listaQuartos.add(new Enfermaria(201, 2, true));
         listaQuartos.add(new HospitalDia(301, 0, true));
+
+        // Médicos iniciais
+        listaMedicos.add(new Medicos(11122233344L, "Dra. Samih de Oliveira", 1002));
+
+        // Pacientes iniciais
+        listaPacientes.add(new Pacientes(99988877766L, "Lucas Kimura", 501));
+        listaPacientes.add(new Pacientes(44433322211L, "Eduardo Elias", 502));
     }
+
 
     private static void exibirMenu() {
         System.out.println("\n-----------------------------------------");
@@ -53,6 +63,7 @@ public class Main {
         System.out.println("4. Ocupar Quarto");
         System.out.println("5. Desocupar Quarto");
         System.out.println("6. Listar Médicos");
+        System.out.println("7. Listar Pacientes");
         System.out.println("0. Sair");
         System.out.println("-----------------------------------------");
     }
@@ -78,7 +89,7 @@ public class Main {
         System.out.print("Código do Funcionário: ");
         int cod = Integer.parseInt(scanner.nextLine());
 
-        Medico novoMedico = new Medico(cpf, nome, cod);
+        Medicos novoMedico = new Medicos(cpf, nome, cod);
         listaMedicos.add(novoMedico);
         System.out.println("Médico " + nome + " registrado com sucesso!");
     }
@@ -143,11 +154,27 @@ public class Main {
             return;
         }
 
-        for (Medico m : listaMedicos) {
+        for (Medicos m : listaMedicos) {
             System.out.println("Código: " + m.getCodFuncionario() + 
                                " | Nome: " + m.getNome() + 
                                " | CPF: " + m.getCpf());
         }
     }
+        private static void listarPacientes() {
+        System.out.println("\n--- Lista de Pacientes ---");
+
+        if (listaPacientes.isEmpty()) {
+            System.out.println("Nenhum paciente cadastrado no sistema.");
+            return;
+        }
+
+        for (Pacientes p : listaPacientes) {
+            System.out.println("Nº Paciente: " + p.getNumPaciente() + 
+                               " | Nome: " + p.getNome() + 
+                               " | CPF: " + p.getCpf() + 
+                               " | Tempo Alocado: " + p.getTempoAlocado() + "h");
+        }
+    }
+
 
 }
