@@ -5,11 +5,8 @@ abstract class Funcionarios extends Pessoas {
         super(cpf, nome);
         this.codFuncionario = cod;
     }
-
-    public int getCodFuncionario() {
-        return codFuncionario;
-    }
-}
+    // Getter
+    public int getCodFuncionario() { return codFuncionario;}
 
 class Medico extends Funcionarios {
     public Medico(long cpf, String nome, int cod) {
