@@ -6,6 +6,8 @@ public class Pacientes extends Pessoas{
     //construtor
     public Pacientes(long cpf, String nome, int cod){
         super(cpf, nome);
+        setNumPaciente(cod); // Salva o 'cod' recebido no atributo numPaciente
+        setTempoAlocado(0);  // Inicia o tempo alocado como 0
         setTempoAlocado(tempoAlocado);
         setNumPaciente(numPaciente);
     }
