@@ -74,12 +74,18 @@ abstract class Quartos {
         }
     }
 
-    public void liberarVaga(){
-        setHospedes(hospedes--);
+        public void liberarVaga(){
+        if (hospedes > 0) {
+            setHospedes(hospedes - 1);
+            checaDisponibilidade();
+        }
     }
 
     public void ocuparVaga(){
-        setHospedes(hospedes++);
-
+        if (hospedes < limitePessoas) {
+            setHospedes(hospedes + 1);
+            checaDisponibilidade();
+        }
     }
+
 }
