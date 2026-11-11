@@ -7,5 +7,8 @@ abstract class Pessoas{
         this.cpf = cpf;
         this.nome = nome;
     }
-
+    
+    public long getCpf() {return cpf;}
+    public String getNome() {return nome;}
 }
+
