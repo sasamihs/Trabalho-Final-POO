@@ -3,7 +3,7 @@ abstract class Funcionarios extends Pessoas {
 
     public Funcionarios(long cpf, String nome, int cod) {
         super(cpf, nome);
-        setCodFuncionario(codFuncionario);
+        setCodFuncionario(cod);
     }
     // Getter
     public int getCodFuncionario() { return codFuncionario;}

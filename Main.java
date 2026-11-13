@@ -28,11 +28,12 @@ public class Main {
                     case 1 -> consultarQuartos();
                     case 2 -> registrarMedico();
                     case 3 -> registrarPaciente();
-                    case 4 -> ocuparQuarto();
-                    case 5 -> desocuparQuarto();
-                    case 6 -> listarMedicos();
-                    case 7 -> listarPacientes();
-                    case 8 -> listarFuncionarios();
+                    case 4 -> registrarEnfermeiro();
+                    case 5 -> ocuparQuarto();
+                    case 6 -> desocuparQuarto();
+                    case 7 -> listarMedicos();
+                    case 8 -> listarPacientes();
+                    case 9 -> listarFuncionarios();
                     case 0 -> System.out.println("\nEncerrando o sistema. Até mais!");
                     default -> System.out.println("\n[Erro] Opção inválida. Digite um número do menu.");
                 }
@@ -73,11 +74,12 @@ public class Main {
         System.out.println("1. Consultar Quartos (Disponibilidade)");
         System.out.println("2. Registrar Medico");
         System.out.println("3. Registrar Paciente");
-        System.out.println("4. Ocupar Quarto");
-        System.out.println("5. Desocupar Quarto");
-        System.out.println("6. Listar Médicos");
-        System.out.println("7. Listar Pacientes");
-        System.out.println("8. Listar Funcionários");
+        System.out.println("4. Registrar Enfermeiro");
+        System.out.println("5. Ocupar Quarto");
+        System.out.println("6. Desocupar Quarto");
+        System.out.println("7. Listar Médicos");
+        System.out.println("8. Listar Pacientes");
+        System.out.println("9. Listar Funcionários");
         System.out.println("0. Sair");
         System.out.println("-----------------------------------------");
     }
@@ -108,7 +110,26 @@ public class Main {
 
         Medicos novoMedico = new Medicos(cpf, nome, cod, crm);
         listaMedicos.add(novoMedico);
+        listaFuncionarios.add(novoMedico);
         System.out.println("Médico " + nome + " registrado com sucesso!");
+    }
+
+    private static void registrarEnfermeiro() {
+        System.out.println("\n--- Registrar Enfermeiro ---");
+        System.out.print("CPF (apenas números): ");
+        long cpf = Long.parseLong(scanner.nextLine());
+        System.out.print("Nome: ");
+        String nome = scanner.nextLine();
+        System.out.print("Código do Funcionário: ");
+        int cod = Integer.parseInt(scanner.nextLine());
+        System.out.print("COREM: ");
+        int crm = Integer.parseInt(scanner.nextLine());
+
+
+        Enfermeiros novoEnfermeiro = new Enfermeiros(cpf, nome, cod, crm);
+        listaEnfermeiros.add(novoEnfermeiro);
+        listaFuncionarios.add(novoEnfermeiro);
+        System.out.println("Enfermeiro " + nome + " registrado com sucesso!");
     }
 
     private static void registrarPaciente() {
