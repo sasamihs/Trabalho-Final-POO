@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class MinhaJanela {
+public class Interface {
     public static void main(String[] args) {
         // 1. Cria a janela principal
         JFrame janela = new JFrame("Meu Primeiro Programa");

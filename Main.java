@@ -6,6 +6,10 @@ public class Main {
     private static List<Quartos> listaQuartos = new ArrayList<>();
     private static List<Medicos> listaMedicos = new ArrayList<>();
     private static List<Pacientes> listaPacientes = new ArrayList<>();
+    private static List<Enfermeiros> listaEnfermeiros = new ArrayList<>();
+    private static List<Funcionarios> listaFuncionarios = new ArrayList<>();
+
+
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -28,6 +32,7 @@ public class Main {
                     case 5 -> desocuparQuarto();
                     case 6 -> listarMedicos();
                     case 7 -> listarPacientes();
+                    case 8 -> listarFuncionarios();
                     case 0 -> System.out.println("\nEncerrando o sistema. Até mais!");
                     default -> System.out.println("\n[Erro] Opção inválida. Digite um número do menu.");
                 }
@@ -47,11 +52,19 @@ public class Main {
         listaQuartos.add(new HospitalDia(301, 0, true));
 
         // Médicos iniciais
-        listaMedicos.add(new Medicos(11122233344L, "Dra. Samih de Oliveira", 1002));
+        listaMedicos.add(new Medicos(11122233344L, "Dra. Samih de Oliveira", 1002, 123));
+
+        // Enfermeiros iniciais
+        listaEnfermeiros.add(new Enfermeiros(55667788L, "Enf. Luiz Antonio Lima", 1001, 4567));
 
         // Pacientes iniciais
         listaPacientes.add(new Pacientes(99988877766L, "Lucas Kimura", 501));
         listaPacientes.add(new Pacientes(44433322211L, "Eduardo Elias", 502));
+
+        //Funcionarios iniciais
+        listaFuncionarios.add(new Medicos(11122233344L, "Dra. Samih de Oliveira", 1002, 123));
+        listaFuncionarios.add(new Enfermeiros(55667788L, "Enf. Luiz Antonio Lima", 1001, 4567));
+
     }
 
 
@@ -64,6 +77,7 @@ public class Main {
         System.out.println("5. Desocupar Quarto");
         System.out.println("6. Listar Médicos");
         System.out.println("7. Listar Pacientes");
+        System.out.println("8. Listar Funcionários");
         System.out.println("0. Sair");
         System.out.println("-----------------------------------------");
     }
@@ -88,8 +102,11 @@ public class Main {
         String nome = scanner.nextLine();
         System.out.print("Código do Funcionário: ");
         int cod = Integer.parseInt(scanner.nextLine());
+        System.out.print("CRM: ");
+        int crm = Integer.parseInt(scanner.nextLine());
 
-        Medicos novoMedico = new Medicos(cpf, nome, cod);
+
+        Medicos novoMedico = new Medicos(cpf, nome, cod, crm);
         listaMedicos.add(novoMedico);
         System.out.println("Médico " + nome + " registrado com sucesso!");
     }
@@ -155,9 +172,7 @@ public class Main {
         }
 
         for (Medicos m : listaMedicos) {
-            System.out.println("Código: " + m.getCodFuncionario() + 
-                               " | Nome: " + m.getNome() + 
-                               " | CPF: " + m.getCpf());
+            m.ficha();
         }
     }
         private static void listarPacientes() {
@@ -176,5 +191,16 @@ public class Main {
         }
     }
 
+        private static void listarFuncionarios(){
+        System.out.println("\n--- Lista de Funcionários ---");
+        
+        if (listaFuncionarios.isEmpty()) {
+            System.out.println("Nenhum funcionário cadastrado no sistema.");
+            return;
+        }
 
+        for (Funcionarios f : listaFuncionarios) {
+            f.ficha();
+        }
+        }
 }
