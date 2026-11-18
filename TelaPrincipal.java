@@ -170,7 +170,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1000, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(130, 186, 130));
@@ -624,7 +623,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(130, 186, 130));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(255, 51, 51));
         jLabel8.setText("• Ocupar e liberar Vagas");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -637,7 +636,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("<html>• Consultar disponibilidade<br>de leitos</html>");
 
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setForeground(new java.awt.Color(255, 51, 51));
         jLabel12.setText("<html>• Cadastrar novos pacientes</html>");
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
